@@ -199,7 +199,7 @@ namespace Application1
 			}
 		}
 		static IEnumerable<PropertyInfo> GetAllProperties(Type T) {
-			IEnumerable<PropertyInfo> PropertyList = T.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+			IEnumerable<PropertyInfo> PropertyList = T.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
 			if (T.GetTypeInfo().BaseType != null) {
 				PropertyList = PropertyList.Concat(GetAllProperties(T.GetTypeInfo().BaseType));
 			}
@@ -256,10 +256,7 @@ namespace Application1
 				Put(new byte[] { Esc.IAC, Esc.Will, Esc.Echo });
 
 				// Client title
-				Put($"{Esc.ClientTitle}{Environment.MachineName}:{ConsoleServer.ConsolePort}\a", NewLine: false);
-
-				// For fun only
-				//LoadingAnimation();
+				Put($"{Esc.ClientTitle}{Environment.MachineName}:{ConsoleServer.ConsolePort}:{Global.ApplicationName}\a", NewLine: false);
 
 				byte[] Buffer = new byte[1024];
 				string Request = "";
@@ -270,9 +267,7 @@ namespace Application1
 					if (!(tcpClient?.Connected ?? false)) {
 						return;
 					}
-
 					try {
-						//int Count;
 						Prompt = $"Password: ";
 						Request = ReadLine();
 					} catch {
@@ -328,6 +323,18 @@ namespace Application1
 
 					if (command.Length > 0) {
 						switch (command.ToLower()) {
+							case @"test":
+								subcommand = subcommand.ToLower();
+								switch (subcommand) {
+									case @"parameters":
+										var parameters = new Parameters(data);
+										PutVar(parameters.GetAllParameters());
+										break;
+									default:
+										Put($"{Esc.ER}Unknown subcommand '{subcommand}'{Esc.Reset}");
+										break;
+								}
+								break;
 							case @"man":
 							case @"help":
 								Put(Man(subcommand, data, @"work"));
@@ -668,8 +675,7 @@ namespace Application1
 		}
 
 		//
-		public static string GetManTopics()
-		{
+		public static string GetManTopics() {
 			var CurrentPath = AppDomain.CurrentDomain.BaseDirectory;
 			var ManFilePath = Path.Combine(new[] { CurrentPath, @"man" });
 			var FilesData = UTIL.GetFiles(ManFilePath, @"*.man");

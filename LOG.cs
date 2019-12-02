@@ -84,7 +84,6 @@ namespace Application1 {
 		}
 
 		// Асинхронная запись в файл
-		static DateTime ? LastWriteFail = null;
 		public static void AsyncFileWrite(string pathFile, string txt) {
 			lock (syncRoot) {
 				try {

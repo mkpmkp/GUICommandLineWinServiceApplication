@@ -2,14 +2,14 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Application1
-{
+namespace Application1 {
 
 	public class Parameters {
 
 		private string RawParametersString;
 		private string[] matches;
-		public Dictionary<string, string> parameters = new Dictionary<string, string>() { };
+
+		public Dictionary<string, string> parameters { get; } = new Dictionary<string, string>() { };
 
 		public Parameters(string ParametersString = null) {
 			RawParametersString = ParametersString;
@@ -33,6 +33,10 @@ namespace Application1
 		//
 		public string GetRawParametersString() {
 			return RawParametersString;
+		}
+
+		public Dictionary<string, string> GetAllParameters() {
+			return parameters;
 		}
 
 		//

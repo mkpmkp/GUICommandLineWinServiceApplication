@@ -1,0 +1,3 @@
+{Esc.H1}Доступные топики{Esc.Reset}
+
+{Data.ManTopics}

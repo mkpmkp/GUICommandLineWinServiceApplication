@@ -1,0 +1,11 @@
+{Esc.H0}Справка основного окна консоли{Esc.Reset}
+
+exit                   - Exit / close connection
+help                   - Get this screen
+tail                   - Current cycle text buffer output.
+                         tail
+                         tail grep <pattern> - filter ouput
+                         tail regexp|regex|reg <pattern> - regexp pattern filter output
+                         tail mark <pattern> - mark by '{Esc.Mark}[!]{Esc.Reset}' matched strings
+man                    - Manual
+                         man <Topic>

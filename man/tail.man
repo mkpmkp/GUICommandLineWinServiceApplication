@@ -1,0 +1,19 @@
+{Esc.H0}Получение вывода из циклического буфера{Esc.Reset}
+
+Получение ТЕКУЩЕГО вывода системы логирования.
+
+{Esc.H1}Usage{Esc.Reset}
+
+tail
+tail clear - сброс буфера
+tail test [items|get] - тест состояния
+tail continue - начать вывод с текущего положения указателя циклического буфера
+tail grep|regex <pattern>
+
+{Esc.H1}Параметры{Esc.Reset}
+
+tail grep ///
+tail regex ///|Ошибка операции|50/100|100/100
+tail regex ///.*?Success: [^0]
+tail regex (importPaymentDocumentDataWithdraw|importPaymentDocumentData).*?///.*?Fail:\s*[^0]
+tail continue

@@ -1,0 +1,9 @@
+{Esc.H0}SET{Esc.Reset}
+
+{Esc.H1}Usage{Esc.Reset}
+
+set <parameter> <volume>
+
+{Esc.H1}Параметры{Esc.Reset}
+
+set loglevel <0-9>                  - установить уровень логирования 0-9.

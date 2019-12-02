@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Created Type="DateTime">2017-10-04T08:51:29.3704717+07:00</Created>
+  <CurrentProfile>Default</CurrentProfile>
+  <Profiles>
+    <Profile Name="Default">
+      <SenderID Type="String">Application1</SenderID>
+      <TransportCertificate Type="String">9E94DD0C3C0A1ABE37CA2DFB2A408F30A417A4DA</TransportCertificate>
+      <DBHost Type="String">sql.server.local</DBHost>
+      <DBName Type="String">DataBaseName</DBName>
+      <DBUserName Type="String">DB_User</DBUserName>
+      <DBUserPassword Type="String">vCRYH7xXuh5opv/RTcTjWw==</DBUserPassword>
+      <ConsolePort Type="String">500</ConsolePort>
+    </Profile>
+    <Profile Name="Test">
+      <SenderID Type="String">Application1</SenderID>
+      <TransportCertificate Type="String">9E94DD0C3C0A1ABE37CA2DFB2A408F30A417A4DA</TransportCertificate>
+      <DBHost Type="String">sql.server.local</DBHost>
+      <DBName Type="String">DataBaseName</DBName>
+      <DBUserName Type="String">DB_User</DBUserName>
+      <DBUserPassword Type="String">vCRYH7xXuh5opv/RTcTjWw==</DBUserPassword>
+      <ConsolePort Type="String">501</ConsolePort>
+    </Profile>
+  </Profiles>
+</Configuration>

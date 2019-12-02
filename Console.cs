@@ -13,8 +13,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Application1
-{
+namespace Application1 {
 
 	//
 	public class ConsoleServer {

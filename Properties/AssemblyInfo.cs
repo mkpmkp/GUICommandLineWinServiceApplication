@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // Управление общими сведениями о сборке осуществляется с помощью 
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("Gis_gkh_Tomsk")]
-[assembly: AssemblyDescription("Интеграция с порталом ГИС ЖКХ dom.gosuslugi.ru")]
+[assembly: AssemblyTitle("Application1")]
+[assembly: AssemblyDescription("Пример приложения")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("AO TomskRTS")]
-[assembly: AssemblyProduct("Gis_gkh_Tomsk")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyProduct("Application1")]
+[assembly: AssemblyCopyright("Copyright mkpmkp ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

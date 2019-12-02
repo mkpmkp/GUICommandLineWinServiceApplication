@@ -11,7 +11,8 @@ namespace Application1
 	// Есть мнение что такая организация хранения данных - зло
 	public static class Global {
 
-		public static string ApplicationName = @"Application1.exe";
+		public static string ApplicationFileName = @"Application1.exe";
+		public static string ApplicationName = Application.ProductName.ToString();
 
 		// Дата сборки
 		public static DateTime BuildDate;

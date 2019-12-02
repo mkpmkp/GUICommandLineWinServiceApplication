@@ -18,7 +18,7 @@ namespace Application1 {
 			// ловим все не обработанные исключения
 			Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(_UnhandledException2);
 
-			Global.ApplicationName = AppDomain.CurrentDomain.FriendlyName;
+			Global.ApplicationFileName = AppDomain.CurrentDomain.FriendlyName;
 
 			if (Environment.UserInteractive) {
 				// Приложение имеет пользовательский интерфейс (GUI/Command line)
@@ -128,12 +128,12 @@ namespace Application1 {
 					Console.WriteLine($"-------------------------------------");
 					Console.WriteLine($"Usage:");
 					Console.WriteLine($"-------------------------------------");
-					Console.WriteLine($"{Global.ApplicationName} /Install /ServiceName=<ServiceName> /DisplayName=<DisplayName> /Description=<Description> /ConsolePort=<ConsolePort>");
-					Console.WriteLine($"{Global.ApplicationName} /UnInstall /ServiceName=<ServiceName>");
-					Console.WriteLine($"{Global.ApplicationName} /CheckInstalled /ServiceName=<ServiceName>");
-					Console.WriteLine($"{Global.ApplicationName} /Stop /ServiceName=<ServiceName>");
-					Console.WriteLine($"{Global.ApplicationName} /Start /ServiceName=<ServiceName>");
-					Console.WriteLine($"{Global.ApplicationName} /Help");
+					Console.WriteLine($"{Global.ApplicationFileName} /Install /ServiceName=<ServiceName> /DisplayName=<DisplayName> /Description=<Description> /ConsolePort=<ConsolePort>");
+					Console.WriteLine($"{Global.ApplicationFileName} /UnInstall /ServiceName=<ServiceName>");
+					Console.WriteLine($"{Global.ApplicationFileName} /CheckInstalled /ServiceName=<ServiceName>");
+					Console.WriteLine($"{Global.ApplicationFileName} /Stop /ServiceName=<ServiceName>");
+					Console.WriteLine($"{Global.ApplicationFileName} /Start /ServiceName=<ServiceName>");
+					Console.WriteLine($"{Global.ApplicationFileName} /Help");
 					Console.WriteLine($"-------------------------------------");
 					Pause();
 				} else {

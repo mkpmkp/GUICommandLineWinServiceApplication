@@ -1,5 +1,4 @@
-﻿namespace Application1
-{
+﻿namespace Application1 {
 
 	// Универсальный класс "Успех"
 	public class Success : Event {

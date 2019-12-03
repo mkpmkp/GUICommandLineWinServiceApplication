@@ -582,6 +582,8 @@ namespace Application1 {
 		//
 		public static string GetState() {
 			return UTIL.ShowVar(new Dictionary<string, object>() {
+				["ApplicationFileName"] = Global.ApplicationFileName,
+				["ApplicationName"] = Global.ApplicationName,
 				["Режим работы клиента"] = Global.StartedAs,
 				["ApplicationStartTime"] = Global.ApplicationStartTime,
 				["Current system time"] = DateTime.Now,
@@ -592,8 +594,11 @@ namespace Application1 {
 				["ConfigProfile"] = Global.Configuration.CurrentProfile(),
 				["DB_Name"] = Global.DBName,
 				["DB_User"] = Global.DBUser,
+				["DB_Password"] = Global.DBPassword,
 				["SenderID"] = Global.SenderId,
 				["BuildDate"] = Global.BuildDate,
+				["CurrentConfigProfile"] = Global.Configuration.CurrentProfile(),
+				["CurrentConfigParameters"] = Global.Configuration.Current.GetAllParameters(),
 			});
 		}
 

@@ -4,14 +4,13 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Application1
-{
+namespace Application1 {
 
 	// Класс для хранения глобальных переменных приложения
 	// Есть мнение что такая организация хранения данных - зло
 	public static class Global {
 
-		public static string ApplicationFileName = @"Application1.exe";
+		public static string ApplicationFileName = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
 		public static string ApplicationName = Application.ProductName.ToString();
 
 		// Дата сборки
@@ -35,6 +34,7 @@ namespace Application1
 		public static string SenderId;
 		public static string DBName;
 		public static string DBUser;
+		public static string DBPassword;
 
 		private static readonly object syncRoot = new object();
 
@@ -54,9 +54,10 @@ namespace Application1
 		// Применение текущей конфигурации
 		public static object ApplyConfiguration() {
 			try {
-				SenderId = (string)Configuration.Current.SenderID ?? Guid.Empty.ToString();
+				SenderId = Configuration.Current.SenderID ?? Guid.Empty.ToString();
 				DBName = Configuration.Current.DBName;
 				DBUser = Configuration.Current.DBUserName;
+				DBPassword = ((string)Global.Configuration.Current.DBUserPassword).Decrypt("ENbvcxz54");
 				if (Configuration.Current.Has(@"ConsolePort")) ConsolePort = ((string)Configuration.Current.ConsolePort)?.ToInt() ?? 500;
 				if (Configuration.Current.Has(@"ConsolePassword")) ConsolePassword = Configuration.Current.ConsolePassword;
 				return true;

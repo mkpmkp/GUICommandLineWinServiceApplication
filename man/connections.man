@@ -5,6 +5,3 @@
 connections           - show all connections. CURRENT connection marked by '{Esc.Mark}[!]{Esc.Reset}'
 connections close <n> - close connection with ID = <n>
 connections close all - close ALL connections except CURRENT.
-
--------------------------------
-Available only in command mode.

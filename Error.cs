@@ -2,8 +2,7 @@
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 
-namespace Application1
-{
+namespace Application1 {
 
 	public class ErrorParameters {
 		public int ErrorLevel = 0;

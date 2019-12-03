@@ -10,14 +10,12 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Application1
-{
+namespace Application1 {
 
 	// Класс, содержащий общие утилитарные функции
 	public static class UTIL {
 		// Получение списка файлов по указанному пути
-		public static object GetFiles(string Path, string Mask = @"*.*", SearchOption SearchOptions = SearchOption.AllDirectories)
-		{
+		public static object GetFiles(string Path, string Mask = @"*.*", SearchOption SearchOptions = SearchOption.AllDirectories) {
 			try {
 				var Result = new string[0];
 				if (!Directory.Exists(Path)) return Result; //new Error("#FIL000001", string.Format(@"Нет указанного каталога '{0}'", Path ?? @"n/a"));
